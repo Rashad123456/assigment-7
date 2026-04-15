@@ -41,6 +41,8 @@ const FriendDetailsPage = () => {
     <section className="px-4 py-10 sm:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="grid gap-4 md:grid-cols-[180px_1fr]">
+          
+          {/* LEFT SIDE */}
           <div className="space-y-2">
             <div className="soft-card px-4 py-5 text-center shadow-sm">
               <img
@@ -72,15 +74,18 @@ const FriendDetailsPage = () => {
                 ))}
               </div>
 
+              {/* BIO */}
               <p className="mt-4 text-[11px] italic leading-5 text-slate-500">
                 "{friend.bio}"
               </p>
 
-              <p className="mt-3 text-[10px] text-slate-400">
-                Preferred: email
+              {/* EMAIL (IMPORTANT) */}
+              <p className="mt-3 text-[11px] text-slate-400">
+                📧 {friend.email}
               </p>
             </div>
 
+            {/* ACTION BUTTONS */}
             <button className="flex w-full items-center justify-center gap-2 rounded border border-slate-200 bg-white px-3 py-2 text-[11px] text-slate-600 transition hover:bg-slate-50">
               <HiOutlineClock className="text-sm" />
               Snooze 2 Weeks
@@ -97,7 +102,10 @@ const FriendDetailsPage = () => {
             </button>
           </div>
 
+          {/* RIGHT SIDE */}
           <div className="space-y-3">
+
+            {/* STATS */}
             <div className="grid gap-3 sm:grid-cols-3">
               <div className="soft-card px-4 py-5 text-center">
                 <h3 className="text-lg font-bold text-slate-700">
@@ -112,17 +120,22 @@ const FriendDetailsPage = () => {
                 <h3 className="text-lg font-bold text-slate-700">
                   {friend.goal}
                 </h3>
-                <p className="mt-2 text-[11px] text-slate-400">Goal (Days)</p>
+                <p className="mt-2 text-[11px] text-slate-400">
+                  Goal (Days)
+                </p>
               </div>
 
               <div className="soft-card px-4 py-5 text-center">
                 <h3 className="text-sm font-semibold text-slate-700">
                   {formatDate(friend.next_due_date)}
                 </h3>
-                <p className="mt-2 text-[11px] text-slate-400">Next Due</p>
+                <p className="mt-2 text-[11px] text-slate-400">
+                  Next Due
+                </p>
               </div>
             </div>
 
+            {/* RELATIONSHIP GOAL */}
             <div className="soft-card px-4 py-3">
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -130,7 +143,8 @@ const FriendDetailsPage = () => {
                     Relationship Goal
                   </h2>
                   <p className="mt-3 text-[12px] text-slate-500">
-                    Connect every <span className="font-semibold">{friend.goal} days</span>
+                    Connect every{" "}
+                    <span className="font-semibold">{friend.goal} days</span>
                   </p>
                 </div>
 
@@ -140,6 +154,7 @@ const FriendDetailsPage = () => {
               </div>
             </div>
 
+            {/* QUICK CHECK-IN */}
             <div className="soft-card px-4 py-4">
               <h2 className="text-sm font-semibold text-slate-700">
                 Quick Check-In
@@ -163,6 +178,7 @@ const FriendDetailsPage = () => {
                 />
               </div>
             </div>
+
           </div>
         </div>
       </div>
